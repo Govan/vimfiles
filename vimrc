@@ -26,8 +26,6 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 set nohlsearch                  " don't highlight on search
 
-map ,, <C-^>                    " swap between active/last-active files without stretching
-
 "-------------------------------------------------------------------------------------
 " Tab Completion
 set wildmode=list:longest,list:full
@@ -64,6 +62,7 @@ set cursorline
 "-------------------------------------------------------------------------------------
 "  allow buffer swapping when the current buffer is unsaved
 set hidden
+map ,, <C-^>                    " swap between active/last-active files without stretching
 
 "-------------------------------------------------------------------------------------
 " Command-T - https://github.com/wincent/Command-T
