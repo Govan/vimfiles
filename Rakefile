@@ -5,12 +5,18 @@ task :install do
   replace_file("vimrc")
   replace_file("gvimrc")
   replace_file("vim")
+  setup_command_t  
 end
 
 def replace_file(file)
   system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
   link_file(file)
 end
+
+def setup_command_t
+  system "cd vim/bundle/command-t && rake make"
+end
+
 
 def link_file(file)
   if file =~ /.erb$/
