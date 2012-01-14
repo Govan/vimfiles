@@ -2,15 +2,21 @@ require 'rake'
 
 desc "install my vim setup"
 task :install do
+  setup_submodules
+  setup_command_t  
   replace_file("vimrc")
   replace_file("gvimrc")
   replace_file("vim")
-  setup_command_t  
 end
 
 def replace_file(file)
   system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
   link_file(file)
+end
+
+def setup_submodules
+  system "git submodule init"
+  system "git submodule update"
 end
 
 def setup_command_t
