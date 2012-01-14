@@ -21,10 +21,11 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 
 "-------------------------------------------------------------------------------------
 "" Searching
-set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+set nohlsearch                  " don't highlight on search
+
 
 
 "-------------------------------------------------------------------------------------
@@ -40,6 +41,8 @@ set directory=~/.vimswap
 set nobackup
 set noswapfile
 set winheight=11
+
+map! <C-space> <esc>  " Remap escape to shift+space
 
 "-------------------------------------------------------------------------------------
 "" Use Pathogen - https://github.com/tpope/vim-pathogen
@@ -76,3 +79,4 @@ let g:CommandTMaxHeight=20
 "-------------------------------------------------------------------------------------
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
+
