@@ -7,11 +7,16 @@ task :install do
   replace_file("vimrc")
   replace_file("gvimrc")
   replace_file("vim")
+  create_swap_directory
 end
 
 def replace_file(file)
   system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
   link_file(file)
+end
+
+def create_swap_directory 
+  system %Q{mkdir "$HOME/.vimswap"}
 end
 
 def setup_submodules
