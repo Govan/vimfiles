@@ -87,3 +87,7 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+"-------------------------------------------------------------------------------------
+" Tags index file should always live in the project root
+set tags=./tags;
