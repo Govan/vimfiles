@@ -91,3 +91,7 @@ noremap <Right> <nop>
 "-------------------------------------------------------------------------------------
 " Tags index file should always live in the project root
 set tags=./tags;
+
+"-------------------------------------------------------------------------------------
+" Use ack instead of grep
+set grepprg=ack
