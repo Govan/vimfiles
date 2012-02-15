@@ -4,7 +4,10 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 
-
+"-------------------------------------------------------------------------------------
+" I'm not quite sure what this does, but it fixes a colour issue with vim
+" running in iTerm
+set t_Co=16
 
 "-------------------------------------------------------------------------------------
 " Layout options
