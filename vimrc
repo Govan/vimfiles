@@ -105,3 +105,7 @@ set tags=./tags;
 " Use ack instead of grep
 set grepprg=ack
 
+"-------------------------------------------------------------------------------------
+" Make Y, D, etc copy to the system clipboard in MacVim
+set clipboard=unnamed
+
