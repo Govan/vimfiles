@@ -7,8 +7,11 @@ filetype plugin indent on       " load file type plugins + indentation
 "-------------------------------------------------------------------------------------
 " I'm not quite sure what this does, but it fixes a colour issue with vim
 " running in iTerm
-set t_Co=16
-
+" set t_Co=256
+" Update - Turns out I don't need this provided 
+" a) .tmux.conf declares screen-256colors
+" b) iTerm declares as xTerm-256colors
+" With this is place colours work both in and out of tmux 
 "-------------------------------------------------------------------------------------
 " Layout options
 set number
