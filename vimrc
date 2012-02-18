@@ -4,6 +4,10 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 
+
+
+
+
 "-------------------------------------------------------------------------------------
 " I'm not quite sure what this does, but it fixes a colour issue with vim
 " running in iTerm
@@ -36,7 +40,7 @@ set smartcase                   " ... unless they contain at least one capital l
 set nohlsearch                  " don't highlight on search
 
 "-------------------------------------------------------------------------------------
-" Tab Completion
+" Command T Completion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rb
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif
@@ -95,7 +99,15 @@ au BufRead,BufNewFile {Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set f
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
-noremap <Right> <nop>
+
+" Cmd+9/0 to move between open buffers.  Clashes with a iTerm shortcut, but
+" fine for mvim
+map <D-0> :bn<CR>
+map <D-9> :bp<CR>
+map! <D-0> <esc>:bn<CR>
+map! <D-9> <esc>:bp<CR>
+
+
 
 "-------------------------------------------------------------------------------------
 " Tags index file should always live in the project root
