@@ -99,13 +99,13 @@ au BufRead,BufNewFile {Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set f
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
+noremap <Right> <nop>
 
-" Cmd+9/0 to move between open buffers.  Clashes with a iTerm shortcut, but
-" fine for mvim
-map <D-0> :bn<CR>
-map <D-9> :bp<CR>
-map! <D-0> <esc>:bn<CR>
-map! <D-9> <esc>:bp<CR>
+" Move between buffers with Ctl+h/l 
+map <C-l> :bn<CR>
+map <C-h> :bp<CR>
+map! <C-l> <esc>:bn<CR>
+map! <C-h> <esc>:bp<CR>
 
 
 
