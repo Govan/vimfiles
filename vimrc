@@ -42,7 +42,7 @@ set nohlsearch                  " don't highlight on search
 "-------------------------------------------------------------------------------------
 " Command T Completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rb
+set wildignore+=*.o,*.obj,.git
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif
 set wildignore+=*.rsync_cache
 
