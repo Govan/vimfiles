@@ -46,6 +46,15 @@ set wildignore+=*.o,*.obj,.git
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif
 set wildignore+=*.rsync_cache
 
+autocmd FocusGained * call s:CmdTFlush()
+autocmd BufWritePost * call s:CmdTFlush()
+
+function s:CmdTFlush(...)
+  if exists(":CommandTFlush") == 2
+    CommandTFlush
+  endif
+endfunction
+
 "-------------------------------------------------------------------------------------
 "" Misc
 set backupdir=~/.vimswap
