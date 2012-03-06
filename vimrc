@@ -120,7 +120,7 @@ map! <C-h> <esc>:bp<CR>
 
 "-------------------------------------------------------------------------------------
 " Tags index file should always live in the project root
-set tags=./tags;
+" set tags=./tags;
 
 "-------------------------------------------------------------------------------------
 " Use ack instead of grep
@@ -129,4 +129,9 @@ set grepprg=ack
 "-------------------------------------------------------------------------------------
 " Make Y, D, etc copy to the system clipboard in MacVim
 set clipboard=unnamed
+
+
+"-------------------------------------------------------------------------------------
+" Stop Supertab from trying to traverse included files: it doesn't work
+set complete=.,w,b,u,t
 
