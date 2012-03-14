@@ -81,12 +81,8 @@ map ,, <C-^>                    " swap between active/last-active files without 
 "-------------------------------------------------------------------------------------
 " Command-T - https://github.com/wincent/Command-T
 " Remap Command-T to, um, cmd-t
-map <D-t> :CommandT<CR>
-map! <D-t> <esc>:CommandT<CR>
-" NB! You'll also need this in .gvimrc
-" if has("gui_macvim")
-"  macmenu &File.New\ Tab key=<nop>
-" endif
+map <C-t> :CommandT<CR>
+map! <C-t> <esc>:CommandT<CR>
 
 let g:CommandTMaxHeight=20
 
