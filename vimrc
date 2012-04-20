@@ -23,6 +23,9 @@ set ruler
 set laststatus=2
 
 "-------------------------------------------------------------------------------------
+" Treat ' as a word separator, for example when navigating with w and b
+set iskeyword+=^.
+"-------------------------------------------------------------------------------------
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
