@@ -4,10 +4,10 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 
-
-
-
-
+"-------------------------------------------------------------------------------------
+" Esc is bad and should not be used.
+:inoremap jk <esc>
+:inoremap <esc> <nop>
 "-------------------------------------------------------------------------------------
 " I'm not quite sure what this does, but it fixes a colour issue with vim
 " running in iTerm
@@ -23,7 +23,13 @@ set ruler
 set laststatus=2
 
 "-------------------------------------------------------------------------------------
-"" Enable Mouse Control
+" Remember last location in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
+"-------------------------------------------------------------------------------------
+" Enable Mouse Control
 set mouse=a
 "-------------------------------------------------------------------------------------
 "" Whitespace
@@ -112,8 +118,6 @@ map <C-h> :bp<CR>
 map! <C-l> <esc>:bn<CR>
 map! <C-h> <esc>:bp<CR>
 
-
-
 "-------------------------------------------------------------------------------------
 " Tags index file should always live in the project root
 " set tags=./tags;
@@ -125,7 +129,6 @@ set grepprg=ack
 "-------------------------------------------------------------------------------------
 " Make Y, D, etc copy to the system clipboard in MacVim
 set clipboard=unnamed
-
 
 "-------------------------------------------------------------------------------------
 " Stop Supertab from trying to traverse included files: it doesn't work
