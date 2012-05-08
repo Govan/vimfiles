@@ -9,9 +9,13 @@ filetype plugin indent on       " load file type plugins + indentation
 :inoremap jk <esc>
 :inoremap <esc> <nop>
 "-------------------------------------------------------------------------------------
+" Running macvim as vim -v has odd backspace issues without using fixdeL
+:fixdel
+
+"-------------------------------------------------------------------------------------
 " I'm not quite sure what this does, but it fixes a colour issue with vim
 " running in iTerm
-" set t_Co=256
+set t_Co=256
 " Update - Turns out I don't need this provided 
 " a) .tmux.conf declares screen-256colors
 " b) iTerm declares as xTerm-256colors
@@ -73,10 +77,14 @@ call pathogen#infect()
 "-------------------------------------------------------------------------------------
 "" Solarized colourscheme - https://github.com/altercation/vim-colors-solarized
 colorscheme solarized
-set guifont=Monaco:h12 
+set guifont=Monaco:h12
 set background=light
-"set background=dark
-
+if has('gui_running')
+  set background=light
+else
+  let g:solarized_termcolors=256
+  set background=light
+endif
 "-------------------------------------------------------------------------------------
 " highlight the current line
 set cursorline
