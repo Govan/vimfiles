@@ -78,13 +78,13 @@ call pathogen#infect()
 "" Solarized colourscheme - https://github.com/altercation/vim-colors-solarized
 colorscheme solarized
 set guifont=Monaco:h12
-set background=light
 if has('gui_running')
-  set background=light
+  " Do nothing
 else
   let g:solarized_termcolors=256
-  set background=light
 endif
+
+set background=light
 "-------------------------------------------------------------------------------------
 " highlight the current line
 set cursorline
