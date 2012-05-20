@@ -81,7 +81,9 @@ set guifont=Monaco:h12
 if has('gui_running')
   " Do nothing
 else
-  let g:solarized_termcolors=256
+  " Sadly, this gives us nasty colours in iTerm, we'll probably move this to 
+  " a local file and set it up case-by-case
+  " let g:solarized_termcolors=256
 endif
 
 set background=light
@@ -124,11 +126,11 @@ noremap <Left> <nop>
 noremap <Right> <nop>
 
 " Move between buffers with Ctl+h/l 
-map <C-l> :bn<CR>
-map <C-h> :bp<CR>
-map! <C-l> <esc>:bn<CR>
-map! <C-h> <esc>:bp<CR>
-
+"map <C-l> :bn<CR>
+"map <C-h> :bp<CR>
+"map! <C-l> <esc>:bn<CR>
+"map!-h> <esc>:bp<CR>
+"
 "-------------------------------------------------------------------------------------
 " Tags index file should always live in the project root
 " set tags=./tags;
@@ -145,3 +147,9 @@ set clipboard=unnamed
 " Stop Supertab from trying to traverse included files: it doesn't work
 set complete=.,w,b,u,t
 
+"-------------------------------------------------------------------------------------
+" Stop arrow keys echoing in insert mode 
+set t_ku=OA 
+set t_kd=OB 
+set t_kr=OC 
+set t_kl=OD 
