@@ -37,7 +37,7 @@ if has("autocmd")
 endif
 "-------------------------------------------------------------------------------------
 " Enable Mouse Control
-set mouse=a
+"set mouse=a
 "-------------------------------------------------------------------------------------
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -66,8 +66,6 @@ set directory=~/.vimswap
 set nobackup
 set noswapfile
 set winheight=11
-
-map! <C-space> <esc>  " Remap escape to shift+space
 
 "-------------------------------------------------------------------------------------
 "" Use Pathogen - https://github.com/tpope/vim-pathogen
