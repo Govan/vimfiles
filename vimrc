@@ -8,9 +8,6 @@ filetype plugin indent on       " load file type plugins + indentation
 " Esc is bad and should not be used.
 :inoremap jk <esc>
 :inoremap <esc> <nop>
-"-------------------------------------------------------------------------------------
-" Running macvim as vim -v has odd backspace issues without using fixdeL
-:fixdel
 
 "-------------------------------------------------------------------------------------
 " I'm not quite sure what this does, but it fixes a colour issue with vim
