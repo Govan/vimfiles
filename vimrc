@@ -7,7 +7,7 @@ filetype plugin indent on       " load file type plugins + indentation
 "-------------------------------------------------------------------------------------
 " Esc is bad and should not be used.
 :inoremap jk <esc>
-:inoremap <esc> <nop>
+":inoremap <esc> <nop>
 
 "-------------------------------------------------------------------------------------
 " I'm not quite sure what this does, but it fixes a colour issue with vim
@@ -112,18 +112,12 @@ endfunction
 "-------------------------------------------------------------------------------------
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
-"-------------------------------------------------------------------------------------
-" Turn off the arrow keys in command mode. Yes, it'll hurt. Yes, it'll work.                                                                                                                                                              
-noremap <Up> <nop>                                                                                                                                                                                                                        
-noremap <Down> <nop>                                                                                                                                                                                                                      
-noremap <Left> <nop>                                                                                                                                                                                                                      
-noremap <Right> <nop>
-"-------------------------------------------------------------------------------------
+""-------------------------------------------------------------------------------------
 " Move between bunfers with Ctl+h/l 
-"map <C-l> :bn<CR>
-"map <C-h> :bp<CR>
-"map! <C-l> <esc>:bn<CR>
-"map!-h> <esc>:bp<CR>
+map <C-l> :bn<CR>
+map <C-h> :bp<CR>
+map! <C-l> <esc>:bn<CR>
+map! <C-h> <esc>:bp<CR>
 "
 "-------------------------------------------------------------------------------------
 " Tags index file should always live in the project root
@@ -142,8 +136,10 @@ set clipboard=unnamed
 set complete=.,w,b,u,t
 
 "-------------------------------------------------------------------------------------
-" Stop arrow keys echoing in insert mode 
-set t_ku=OA 
-set t_kd=OB 
-set t_kr=OC 
-set t_kl=OD 
+" Arrow keys tend to play silly buggers when running inside tmux
+" This seems to fix it
+" http://superuser.com/questions/215180/when-running-screen-on-osx-commandr-messes-up-arrow-keys-in-vim-across-all-scr
+map <Esc>[A <Up>
+map <Esc>[B <Down>
+map <Esc>[C <Right>
+map <Esc>[D <Left>
