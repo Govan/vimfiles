@@ -114,12 +114,6 @@ endfunction
 au BufRead,BufNewFile {Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 
 "-------------------------------------------------------------------------------------
-" Turn off the arrow keys in command mode. Yes, it'll hurt. Yes, it'll work. 
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
 " Move between buffers with Ctl+h/l 
 "map <C-l> :bn<CR>
 "map <C-h> :bp<CR>
