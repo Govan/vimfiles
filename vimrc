@@ -112,9 +112,14 @@ endfunction
 "-------------------------------------------------------------------------------------
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
-
 "-------------------------------------------------------------------------------------
-" Move between buffers with Ctl+h/l 
+" Turn off the arrow keys in command mode. Yes, it'll hurt. Yes, it'll work.                                                                                                                                                              
+noremap <Up> <nop>                                                                                                                                                                                                                        
+noremap <Down> <nop>                                                                                                                                                                                                                      
+noremap <Left> <nop>                                                                                                                                                                                                                      
+noremap <Right> <nop>
+"-------------------------------------------------------------------------------------
+" Move between bunfers with Ctl+h/l 
 "map <C-l> :bn<CR>
 "map <C-h> :bp<CR>
 "map! <C-l> <esc>:bn<CR>
