@@ -88,9 +88,16 @@ set cursorline
 :highlight CursorLine guibg=#eff0fd
 
 "-------------------------------------------------------------------------------------
+" BUFFER HANDLING
 "  allow buffer swapping when the current buffer is unsaved
 set hidden
-map ,, <C-^>                    " swap between active/last-active files without stretching
+" swap between active/last-active files without stretching
+map ,, <C-^>         
+" Move between buffers with Ctl+h/l 
+map <C-l> :bn<CR>
+map <C-h> :bp<CR>
+map! <C-l> <esc>:bn<CR>
+map! <C-h> <esc>:bp<CR>
 
 "-------------------------------------------------------------------------------------
 " Command-T - https://github.com/wincent/Command-T
@@ -113,11 +120,6 @@ endfunction
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 ""-------------------------------------------------------------------------------------
-" Move between bunfers with Ctl+h/l 
-map <C-l> :bn<CR>
-map <C-h> :bp<CR>
-map! <C-l> <esc>:bn<CR>
-map! <C-h> <esc>:bp<CR>
 "
 "-------------------------------------------------------------------------------------
 " Tags index file should always live in the project root
