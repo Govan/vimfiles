@@ -145,3 +145,10 @@ map <Esc>[A <Up>
 map <Esc>[B <Down>
 map <Esc>[C <Right>
 map <Esc>[D <Left>
+
+"-------------------------------------------------------------------------------------
+" Map save to a friendlier ctl+s
+" Note that ctl+s can cause issues with flow-control in bash & zsh so you need
+" to unset/work around this mapping in the shell
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>a
