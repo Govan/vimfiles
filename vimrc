@@ -152,3 +152,8 @@ map <Esc>[D <Left>
 " to unset/work around this mapping in the shell
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>a
+
+
+command! Q q " Bind :Q to :q
+" Disable Ex mode
+map Q <Nop>
