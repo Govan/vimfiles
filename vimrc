@@ -6,8 +6,10 @@ filetype plugin indent on       " load file type plugins + indentation
 
 "-------------------------------------------------------------------------------------
 " Esc is bad and should not be used.
-:inoremap jk <esc>
-":inoremap <esc> <nop>
+" Use <ctrl+c> instead - we used to use jk - but that leads to some annoyances
+" when typing and some cases where it doesn't work. Best stick with <ctrl+c>:
+" it's universal
+:inoremap <esc> <nop>
 
 "-------------------------------------------------------------------------------------
 " I'm not quite sure what this does, but it fixes a colour issue with vim
