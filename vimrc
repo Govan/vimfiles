@@ -133,7 +133,9 @@ set grepprg=ack
 
 "-------------------------------------------------------------------------------------
 " Make Y, D, etc copy to the system clipboard in MacVim
-set clipboard=unnamed
+" We don't like tihs behaviour because it plays silly buggers with my
+" Clipboard manager
+" set clipboard=unnamed
 
 "-------------------------------------------------------------------------------------
 " Stop Supertab from trying to traverse included files: it doesn't work
@@ -147,6 +149,7 @@ map <Esc>[A <Up>
 map <Esc>[B <Down>
 map <Esc>[C <Right>
 map <Esc>[D <Left>
+
 
 "-------------------------------------------------------------------------------------
 " Map save to a friendlier ctl+s
