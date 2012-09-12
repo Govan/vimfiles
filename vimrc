@@ -80,8 +80,9 @@ set background=light
 "-------------------------------------------------------------------------------------
 " highlight the current line
 set cursorline
-:highlight CursorLine guibg=#eff0fd
-
+highlight CursorLine ctermbg=220
+autocmd InsertEnter * highlight CursorLine ctermbg=254
+autocmd InsertLeave * highlight CursorLine ctermbg=220
 "-------------------------------------------------------------------------------------
 " BUFFER HANDLING
 "  allow buffer swapping when the current buffer is unsaved
