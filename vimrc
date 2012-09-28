@@ -70,10 +70,6 @@ colorscheme solarized
 set guifont=Monaco:h12
 if has('gui_running')
   " Do nothing
-else
-  " Sadly, this gives us nasty colours in iTerm, we'll probably move this to 
-  " a local file and set it up case-by-case
-  " let g:solarized_termcolors=256
 endif
 
 set background=light
@@ -156,3 +152,8 @@ imap <C-s> <esc>:w<CR>a
 command! Q q " Bind :Q to :q
 " Disable Ex mode
 map Q <Nop>
+"-------------------------------------------------------------------------------------
+" Load in host-dependant settings 
+if $HOSTNAME == "remotebaby.leftbrained.co.uk"
+  so ~/.vim/localrc/remotebaby
+endif
