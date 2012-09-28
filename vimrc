@@ -86,10 +86,10 @@ set hidden
 " swap between active/last-active files without stretching
 map ,, <C-^>         
 " Move between buffers with Ctl+h/l 
-map <C-l> :bn<CR>
-map <C-h> :bp<CR>
-map! <C-l> <esc>:bn<CR>
-map! <C-h> <esc>:bp<CR>
+map <C-j> :bn<CR>
+map <C-k> :bp<CR>
+map! <C-j> <esc>:bn<CR>
+map! <C-k> <esc>:bp<CR>
 
 "-------------------------------------------------------------------------------------
 " Command-T - https://github.com/wincent/Command-T
