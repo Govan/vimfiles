@@ -7,6 +7,7 @@ task :install do
   replace_file("vimrc")
   replace_file("gvimrc")
   replace_file("vim")
+  touch_vimrc_local
   create_swap_directory
 end
 
@@ -26,6 +27,16 @@ end
 
 def setup_command_t
   system "cd vim/bundle/command-t && rake make"
+end
+
+def touch_vimrc_local
+  target = File.expand_path("~/.vimrc_local")
+  unless File.exists? target
+    File.open(target, 'w') do |new_file|
+      new_file << "\" Put private customizations in here\n"
+      new_file << "\" and/or link to one of the per-machine shared configs\n"
+    end
+  end
 end
 
 

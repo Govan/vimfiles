@@ -154,6 +154,4 @@ command! Q q " Bind :Q to :q
 map Q <Nop>
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
-if $HOSTNAME == "remotebaby.leftbrained.co.uk"
-  so ~/.vim/localrc/remotebaby
-endif
+so ~/.vimrc_local
