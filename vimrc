@@ -153,5 +153,7 @@ command! Q q " Bind :Q to :q
 " Disable Ex mode
 map Q <Nop>
 "-------------------------------------------------------------------------------------
+imap <c-l> <space>=><space>
+"-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
