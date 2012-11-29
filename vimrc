@@ -153,7 +153,10 @@ command! Q q " Bind :Q to :q
 " Disable Ex mode
 map Q <Nop>
 "-------------------------------------------------------------------------------------
-imap <c-l> <space>=><space>
+imap <c-l> <space>=><space>  " shortcut for a hash rocket
+"-------------------------------------------------------------------------------------
+" Expand %% to the directory of the currently open buffer
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
