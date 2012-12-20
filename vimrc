@@ -101,22 +101,9 @@ map! <C-j> <esc>:bn<CR>
 map! <C-k> <esc>:bp<CR>
 
 "-------------------------------------------------------------------------------------
-" Command-T - https://github.com/wincent/Command-T
-" Remap Command-T to, um, cmd-t
+" Use CtrlP for project navigation
 map <C-t> :CtrlP<CR>
 map! <C-t> <esc>:CtrlP<CR>
-"
-"let g:CommandTMaxHeight=20
-"
-"" Refresh the Command-T tree on file wirte
-"autocmd BufWritePost * call s:CmdTFlush()
-"
-"function s:CmdTFlush(...)
-"  if exists(":CommandTFlush") == 2
-"    CommandTFlush
-"  endif
-"endfunction
-"
 "-------------------------------------------------------------------------------------
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
