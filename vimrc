@@ -151,6 +151,12 @@ map Q <Nop>
 "-------------------------------------------------------------------------------------
 imap <c-l> <space>=><space>  " shortcut for a hash rocket
 "-------------------------------------------------------------------------------------
+" Spellchecking
+set spelllang=en_gb
+nnoremap <leader>s ]s 
+nnoremap <leader>n [s
+
+"-------------------------------------------------------------------------------------
 " Expand %% to the directory of the currently open buffer
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
