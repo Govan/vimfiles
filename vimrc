@@ -149,7 +149,8 @@ command! Q q " Bind :Q to :q
 " Disable Ex mode
 map Q <Nop>
 "-------------------------------------------------------------------------------------
-imap <c-l> <space>=><space>  " shortcut for a hash rocket
+" shortcut for a hash rocket
+imap <c-l> <space>=><space>  
 "-------------------------------------------------------------------------------------
 " Spellchecking
 set spelllang=en_gb
