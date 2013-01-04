@@ -153,6 +153,10 @@ map Q <Nop>
 imap <c-l> <space>=><space>
 "-------------------------------------------------------------------------------------
 " Spellchecking
+" A note here, because you'll forget 
+" z= brings up the correction page
+" <number>z= to insert the word at than index from the list and jump back to
+" the buffer
 set spelllang=en_gb
 nnoremap <leader>s ]s 
 nnoremap <leader>n [s
