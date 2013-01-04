@@ -150,7 +150,7 @@ command! Q q " Bind :Q to :q
 map Q <Nop>
 "-------------------------------------------------------------------------------------
 " shortcut for a hash rocket
-imap <c-l> <space>=><space>  
+imap <c-l> <space>=><space>
 "-------------------------------------------------------------------------------------
 " Spellchecking
 set spelllang=en_gb
