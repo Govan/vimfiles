@@ -106,7 +106,7 @@ map <C-t> :CtrlP<CR>
 map! <C-t> <esc>:CtrlP<CR>
 "-------------------------------------------------------------------------------------
 " Thorfile, Rakefile and Gemfile are Ruby
-au BufRead,BufNewFile {Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 ""-------------------------------------------------------------------------------------
 "
 "-------------------------------------------------------------------------------------
