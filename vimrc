@@ -19,7 +19,7 @@ endif
 "-------------------------------------------------------------------------------------
 " I'm not quite sure what this does, but it fixes a colour issue with vim
 " running in iTerm
-set t_Co=256
+" set t_Co=256
 " Update - Turns out I don't need this provided 
 " a) .tmux.conf declares screen-256colors
 " b) iTerm declares as xTerm-256colors
@@ -78,7 +78,7 @@ call pathogen#infect()
 
 "-------------------------------------------------------------------------------------
 "" Solarized colourscheme - https://github.com/altercation/vim-colors-solarized
-colorscheme solarized
+colorscheme ir_black
 set guifont=Monaco:h12
 if has('gui_running')
   " Do nothing
@@ -106,7 +106,7 @@ map <C-t> :CtrlP<CR>
 map! <C-t> <esc>:CtrlP<CR>
 "-------------------------------------------------------------------------------------
 " Thorfile, Rakefile and Gemfile are Ruby
-au BufRead,BufNewFile {Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Berksfile,Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 ""-------------------------------------------------------------------------------------
 "
 "-------------------------------------------------------------------------------------
