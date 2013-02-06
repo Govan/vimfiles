@@ -215,6 +215,10 @@ function! RenameFile()
     endif
 endfunction
 map <leader>mv :call RenameFile()<cr>
+"-------------------------------------------------------------------------------------
+" Make . run on every selected line
+:vnoremap . :norm.<CR>
+
 
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
