@@ -138,16 +138,18 @@ map <Esc>[D <Left>
 
 
 "-------------------------------------------------------------------------------------
-" Map save to a friendlier ctl+s
-" Note that ctl+s can cause issues with flow-control in bash & zsh so you need
-" to unset/work around this mapping in the shell
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>a
+" Map save to a friendlier ctl+a
+" Using ctl+s was causing all sorts of issues with terminal control sequences
+" ctl+a doesn't seem to be afflicted
+map <C-a> <esc>:w<CR>
+imap <C-a> <esc>:w<CR>a
 
 
 command! Q q " Bind :Q to :q
 " Disable Ex mode
 map Q <Nop>
+"-------------------------------------------------------------------------------------
+" Kill the bell
 "-------------------------------------------------------------------------------------
 " shortcut for a hash rocket
 imap <c-l> <space>=><space>
