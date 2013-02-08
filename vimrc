@@ -150,6 +150,10 @@ command! Q q " Bind :Q to :q
 map Q <Nop>
 "-------------------------------------------------------------------------------------
 " Kill the bell
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+    autocmd GUIEnter * set visualbell t_vb=
+  endif
 "-------------------------------------------------------------------------------------
 " shortcut for a hash rocket
 imap <c-l> <space>=><space>
