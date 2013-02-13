@@ -152,8 +152,8 @@ map Q <Nop>
 " Kill the bell
 set noerrorbells visualbell t_vb=
 if has('autocmd')
-    autocmd GUIEnter * set visualbell t_vb=
-  endif
+  autocmd GUIEnter * set visualbell t_vb=
+endif
 "-------------------------------------------------------------------------------------
 " shortcut for a hash rocket
 imap <c-l> <space>=><space>
@@ -167,6 +167,9 @@ set spelllang=en_gb
 nnoremap <leader>s ]s 
 nnoremap <leader>n [s
 
+"-------------------------------------------------------------------------------------
+" Config for vim-powerbar
+" let g:Powerline_symbols = 'fancy'
 "-------------------------------------------------------------------------------------
 " Expand %% to the directory of the currently open buffer
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
