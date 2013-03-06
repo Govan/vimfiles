@@ -231,6 +231,9 @@ map <leader>mv :call RenameFile()<cr>
 set nofoldenable
 
 "-------------------------------------------------------------------------------------
+" Set up powerline's prompt - won't have any affect if Powerline's not absent
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
 

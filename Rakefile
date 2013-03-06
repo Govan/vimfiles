@@ -10,6 +10,14 @@ task :install do
   create_swap_directory
 end
 
+desc "install powerline, assuming we're on OS X" 
+task :install_powerline do
+  platform = `uname`.strip
+  system "brew install python" if (platform == "Darwin") && !File.exists?("/usr/local/bin/python")
+  target = "#{File.dirname(__FILE__)}/vim/bundle/powerline"
+  system "git clone git://github.com/Lokaltog/powerline #{target}" unless File.exists?(target)
+end
+
 def replace_file(file)
   system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
   link_file(file)
