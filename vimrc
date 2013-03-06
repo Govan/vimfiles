@@ -226,6 +226,9 @@ map <leader>mv :call RenameFile()<cr>
 " Make . run on every selected line
 :vnoremap . :norm.<CR>
 
+"-------------------------------------------------------------------------------------
+" Disable automatic line folding
+set nofoldenable
 
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
