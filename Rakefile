@@ -16,6 +16,7 @@ task :install_powerline do
   system "brew install python" if (platform == "Darwin") && !File.exists?("/usr/local/bin/python")
   target = "#{File.dirname(__FILE__)}/vim/bundle/powerline"
   system "git clone git://github.com/Lokaltog/powerline #{target}" unless File.exists?(target)
+  puts "You'll probably want to install the powerline fonts and set the terminal to DejaVu-14"
 end
 
 def replace_file(file)
