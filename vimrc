@@ -209,6 +209,7 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set up for VimNotes - https://github.com/xolox/vim-notes
 let g:notes_directory = '~/Dropbox/Documents/Notes'
+let g:notes_suffix = '.md'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
