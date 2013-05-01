@@ -78,7 +78,7 @@ call pathogen#infect()
 
 "-------------------------------------------------------------------------------------
 "" Solarized colourscheme - https://github.com/altercation/vim-colors-solarized
-colorscheme ir_black
+colorscheme solarized
 set guifont=Monaco:h12
 if has('gui_running')
   " Do nothing
@@ -206,6 +206,9 @@ function! AlternateForCurrentFile()
 endfunction
 nnoremap <leader>. :call OpenTestAlternate()<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set up for VimNotes - https://github.com/xolox/vim-notes
+let g:notes_directory = '~/Dropbox/Documents/Notes'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
