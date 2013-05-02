@@ -211,6 +211,9 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 let g:notes_directory = '~/Dropbox/Documents/Notes'
 let g:notes_suffix = '.md'
 
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
 " Taken from...
