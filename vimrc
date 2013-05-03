@@ -211,6 +211,11 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 let g:notes_directory = '~/Dropbox/Documents/Notes'
 let g:notes_suffix = '.md'
 
+" Turn off the 'smart' unicode behaviour of notes: fancy bullets, quotes, etc.
+function! xolox#notes#unicode_enabled()
+  return 0
+endfunction
+
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 
