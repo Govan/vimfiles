@@ -141,8 +141,13 @@ map <Esc>[D <Left>
 " Map save to a friendlier ctl+a
 " Using ctl+s was causing all sorts of issues with terminal control sequences
 " ctl+a doesn't seem to be afflicted
-map <C-a> <esc>:w<CR>
-imap <C-a> <esc>:w<CR>a
+map <M-a> <esc>:w<CR>
+imap <M-a> <esc>:w<CR>a
+
+" On OSX Vim doesn't get the 'raw' keystroke, but instead receives
+" the fancy character. I'll just have to hope I'm vener typing in German.
+map ß <esc>:w<CR>
+imap ß <esc>:w<CR>a
 
 
 command! Q q " Bind :Q to :q
