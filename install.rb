@@ -1,17 +1,6 @@
-require 'rake'
-
-desc "install my vim setup"
-task :install do
-  setup_submodules
-  replace_file("vimrc")
-  replace_file("gvimrc")
-  replace_file("vim")
-  touch_vimrc_local
-  create_swap_directory
-end
-
-desc "install powerline, assuming we're on OS X" 
-task :install_powerline do
+#!/usr/bin/env ruby
+# Todo - make this accessible through the installer
+def install_powerline
   platform = `uname`.strip
   system "brew install python" if (platform == "Darwin") && !File.exists?("/usr/local/bin/python")
   target = "#{File.dirname(__FILE__)}/vim/bundle/powerline"
@@ -55,3 +44,12 @@ def link_file(file)
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
   end
 end
+
+##########################################################
+setup_submodules
+#install_powerline if ARGV[0] == "--with-powerline"
+replace_file("vimrc")
+replace_file("gvimrc")
+replace_file("vim")
+touch_vimrc_local
+create_swap_directory
