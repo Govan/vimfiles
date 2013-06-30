@@ -221,7 +221,13 @@ function! xolox#notes#unicode_enabled()
   return 0
 endfunction
 
+
 au BufRead,BufNewFile *.md setlocal textwidth=80
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setup for open-browser - https://github.com/vim-scripts/open-browser.vim
+let g:netrw_nogx = 1 
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

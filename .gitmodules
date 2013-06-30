@@ -31,3 +31,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/open-browser"]
+	path = vim/bundle/open-browser
+	url = https://github.com/vim-scripts/open-browser.vim.git
