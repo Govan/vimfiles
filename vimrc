@@ -254,6 +254,10 @@ set nofoldenable
 "-------------------------------------------------------------------------------------
 " Set up powerline's prompt - won't have any affect if Powerline's not absent
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+"-------------------------------------------------------------------------------------
+" Don't let Nerdtree replace netrw when opening vim on a dir
+let g:NERDTreeHijackNetrw=0
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
