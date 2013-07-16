@@ -215,11 +215,9 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 " Set up for VimNotes - https://github.com/xolox/vim-notes
 let g:notes_directory = '~/Dropbox/Documents/Notes'
 let g:notes_suffix = '.md'
-
-" Turn off the 'smart' unicode behaviour of notes: fancy bullets, quotes, etc.
-function! xolox#notes#unicode_enabled()
-  return 0
-endfunction
+let g:notes_smart_quotes = 0
+let g:notes_list_bullets = ['*', '-', '+']
+let g:notes_markdown_program = "markdown"
 
 
 au BufRead,BufNewFile *.md setlocal textwidth=80
