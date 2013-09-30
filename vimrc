@@ -213,7 +213,7 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set up for VimNotes - https://github.com/xolox/vim-notes
-let g:notes_directory = '~/Dropbox/Documents/Notes'
+let g:notes_directory = '~/Dropbox/Me/Documents/Notes'
 let g:notes_suffix = '.md'
 let g:notes_smart_quotes = 0
 let g:notes_list_bullets = ['*', '-', '+']
