@@ -25,9 +25,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
-[submodule "vim/bundle/vim-notes"]
-	path = vim/bundle/vim-notes
-	url = https://github.com/xolox/vim-notes.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
@@ -37,9 +34,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/vim-misc"]
-	path = vim/bundle/vim-misc
-	url = https://github.com/xolox/vim-misc.git
 [submodule "vim/bundle/dash.vim"]
 	path = vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
