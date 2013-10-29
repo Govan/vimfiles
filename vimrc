@@ -212,14 +212,6 @@ endfunction
 nnoremap <leader>. :call OpenTestAlternate()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set up for VimNotes - https://github.com/xolox/vim-notes
-let g:notes_directory = '~/Dropbox/Me/Documents/Notes'
-let g:notes_suffix = '.md'
-let g:notes_smart_quotes = 0
-let g:notes_list_bullets = ['*', '-', '+']
-let g:notes_markdown_program = "markdown"
-
-
 au BufRead,BufNewFile *.md setlocal textwidth=80
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Setup for open-browser - https://github.com/vim-scripts/open-browser.vim
