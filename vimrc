@@ -71,6 +71,9 @@ set nobackup
 set noswapfile
 set winheight=11
 
+inoremap eu <ESC>
+
+
 "-------------------------------------------------------------------------------------
 "" Use Pathogen - https://github.com/tpope/vim-pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
