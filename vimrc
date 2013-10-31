@@ -72,6 +72,7 @@ set noswapfile
 set winheight=11
 
 inoremap eu <ESC>
+noremap eu <ESC>
 
 
 "-------------------------------------------------------------------------------------
