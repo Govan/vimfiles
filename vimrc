@@ -121,6 +121,7 @@ set grepprg=ack
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
 "-------------------------------------------------------------------------------------
