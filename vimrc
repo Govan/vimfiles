@@ -117,6 +117,12 @@ au BufRead,BufNewFile {Berksfile,Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile
 " Use ack instead of grep
 set grepprg=ack
 
+" Or, if we have it, use Silver Searcher - it's stupid-fast
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+endif
+
 "-------------------------------------------------------------------------------------
 " Make Y, D, etc copy to the system clipboard in MacVim
 " We don't like tihs behaviour because it plays silly buggers with my
