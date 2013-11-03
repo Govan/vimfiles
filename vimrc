@@ -120,7 +120,7 @@ set grepprg=ack
 " Or, if we have it, use Silver Searcher - it's stupid-fast
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  let g:ctrlp_user_command = 'ag %s --ignore "*.jpg" --ignore "*.png" --ignore "*.gif" -l --nocolor --hidden -g ""'
   let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
