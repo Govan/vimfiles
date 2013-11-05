@@ -77,7 +77,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 "-------------------------------------------------------------------------------------
-"" Solarized colourscheme - https://github.com/altercation/vim-colors-solarized
+"" Solarized colourscheme - https://github.com/altercation/vim-colors-solarizedHH˙˙˙
 colorscheme solarized
 set guifont=Monaco:h12
 if has('gui_running')
@@ -94,11 +94,17 @@ set cursorline
 set hidden
 " swap between active/last-active files without stretching
 map ,, <C-^>         
-" Move between buffers with Ctl+h/l 
-map <C-j> :bn<CR>
-map <C-k> :bp<CR>
-map! <C-j> <esc>:bn<CR>
-map! <C-k> <esc>:bp<CR>
+
+" Move between buffers with alt+h/l 
+map <m-l> :bn<CR>
+map <m-h> :bp<CR>
+map! <m-l> <esc>:bn<CR>
+map! <m-l> <esc>:bp<CR>
+
+map ¬ :bn<CR>
+map ˙ :bp<CR>
+map! ¬ <esc>:bn<CR>
+map! ˙ <esc>:bp<CR>
 
 "-------------------------------------------------------------------------------------
 " Use CtrlP for project navigation
