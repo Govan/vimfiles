@@ -96,15 +96,15 @@ set hidden
 map ,, <C-^>         
 
 " Move between buffers with alt+h/l 
-map <m-l> :bn<CR>
-map <m-h> :bp<CR>
-map! <m-l> <esc>:bn<CR>
-map! <m-l> <esc>:bp<CR>
-
-map ¬ :bn<CR>
-map ˙ :bp<CR>
-map! ¬ <esc>:bn<CR>
-map! ˙ <esc>:bp<CR>
+"map <m-l> :bn<CR>
+"map <m-h> :bp<CR>
+"map! <m-l> <esc>:bn<CR>
+"map! <m-l> <esc>:bp<CR>
+"
+"map ¬ :bn<CR>
+"map ˙ :bp<CR>
+"map! ¬ <esc>:bn<CR>
+"map! ˙ <esc>:bp<CR>
 
 "-------------------------------------------------------------------------------------
 " Use CtrlP for project navigation
