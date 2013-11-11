@@ -120,6 +120,9 @@ au BufRead,BufNewFile {Berksfile,Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile
 " set tags=./tags;
 
 "-------------------------------------------------------------------------------------
+" <c-x>, <c-a> increment as padded decimals rather than octals
+set nrformats=
+"-------------------------------------------------------------------------------------
 " Use ack instead of grep
 set grepprg=ack
 
