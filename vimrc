@@ -108,8 +108,8 @@ map ,, <C-^>
 
 "-------------------------------------------------------------------------------------
 " Use CtrlP for project navigation
-map <C-t> :CtrlP<CR>
-map! <C-t> <esc>:CtrlP<CR>
+noremap <C-t> :CtrlP<CR>
+noremap! <C-t> <esc>:CtrlP<CR>
 "-------------------------------------------------------------------------------------
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Berksfile,Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
