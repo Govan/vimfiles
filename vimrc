@@ -96,15 +96,10 @@ set hidden
 map ,, <C-^>         
 
 " Move between buffers with alt+h/l 
-"map <m-l> :bn<CR>
-"map <m-h> :bp<CR>
-"map! <m-l> <esc>:bn<CR>
-"map! <m-l> <esc>:bp<CR>
-"
-"map ¬ :bn<CR>
-"map ˙ :bp<CR>
-"map! ¬ <esc>:bn<CR>
-"map! ˙ <esc>:bp<CR>
+noremap <M-R> :bn<CR>
+noremap <M-C> :bp<CR>
+noremap! <M-R> <esc>:bn<CR>
+noremap! <M-C> <esc>:bp<CR>
 
 "-------------------------------------------------------------------------------------
 " Use CtrlP for project navigation
@@ -152,20 +147,23 @@ map <Esc>[B <Down>
 map <Esc>[C <Right>
 map <Esc>[D <Left>
 
+"-------------------------------------------------------------------------------------
+" fix meta-keys which generate <Esc>a .. <Esc>z
+" http://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim
+let c='a'
+while c <= 'z'
+  exec "set <M-".toupper(c).">=\e".c
+  exec "imap \e".c." <M-".toupper(c).">"
+  let c = nr2char(1+char2nr(c))
+endw
+set timeout ttimeoutlen=1
 
 "-------------------------------------------------------------------------------------
-" Map save to a friendlier ctl+a
-" Using ctl+s was causing all sorts of issues with terminal control sequences
-" ctl+a doesn't seem to be afflicted
-map <M-w> <esc>:w<CR>
-imap <M-w> <esc>:w<CR>a
+" Map save to a friendlier keystroke
+nnoremap <M-W> <esc>:w<CR>
+inoremap <M-W> <esc>:w<CR>a
 
-" On OSX Vim doesn't get the 'raw' keystroke, but instead receives
-" the fancy character. I'll just have to hope I'm never typing maths
-map ∑ <esc>:w<CR>
-imap ∑ <esc>:w<CR>a
-
-
+"-------------------------------------------------------------------------------------
 command! Q q " Bind :Q to :q
 " Disable Ex mode
 map Q <Nop>
@@ -175,9 +173,7 @@ set noerrorbells visualbell t_vb=
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
-"-------------------------------------------------------------------------------------
-" shortcut for a hash rocket
-imap <c-l> <space>=><space>
+
 "-------------------------------------------------------------------------------------
 " Spellchecking
 " A note here, because you'll forget 
@@ -273,6 +269,20 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 "-------------------------------------------------------------------------------------
 " Don't let Nerdtree replace netrw when opening vim on a dir
 let g:NERDTreeHijackNetrw=0
+
+"-------------------------------------------------------------------------------------
+" Remap tmux-vim-navigator to use <m-direction> rather than <c-direction>
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <M-H> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-J> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-K> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-L> :TmuxNavigateRight<cr>
+
+inoremap <silent> <M-H> <Esc>:TmuxNavigateLeft<cr>
+inoremap <silent> <M-J> <Esc>:TmuxNavigateDown<cr>
+inoremap <silent> <M-K> <Esc>:TmuxNavigateUp<cr>
+inoremap <silent> <M-L> <Esc>:TmuxNavigateRight<cr>
+
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
