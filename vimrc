@@ -253,6 +253,13 @@ map <leader>mv :call RenameFile()<cr>
 :vnoremap . :norm.<CR>
 
 "-------------------------------------------------------------------------------------
+" Stolen from [More Instantly Better
+" Vim](http://programming.oreilly.com/2013/10/more-instantly-better-vim.html)
+" swap : and ; around to save constant <shifting>
+nnoremap ; :
+nnoremap : ;
+
+"-------------------------------------------------------------------------------------
 " Disable automatic line folding
 set nofoldenable
 
