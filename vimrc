@@ -86,8 +86,10 @@ endif
 
 set background=light
 "-------------------------------------------------------------------------------------
-" highlight the current line
-set cursorline
+" Turn off the current line highlight - it makes syntax enabled file very,
+" very laggy when moving, or at least it does when used in combination with
+" the rest of my setup. Possibly something to do with string highlighting?
+set nocursorline
 "-------------------------------------------------------------------------------------
 " BUFFER HANDLING
 "  allow buffer swapping when the current buffer is unsaved
@@ -252,8 +254,8 @@ map <leader>mv :call RenameFile()<cr>
 :vnoremap . :norm.<CR>
 
 "-------------------------------------------------------------------------------------
-" Stolen from [More Instantly Better
-" Vim](http://programming.oreilly.com/2013/10/more-instantly-better-vim.html)
+" Stolen from More Instantly Better Vim
+" http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
 " swap : and ; around to save constant <shifting>
 nnoremap ; :
 nnoremap : ;
@@ -282,6 +284,13 @@ inoremap <silent> <M-H> <Esc>:TmuxNavigateLeft<cr>
 inoremap <silent> <M-J> <Esc>:TmuxNavigateDown<cr>
 inoremap <silent> <M-K> <Esc>:TmuxNavigateUp<cr>
 inoremap <silent> <M-L> <Esc>:TmuxNavigateRight<cr>
+
+"-------------------------------------------------------------------------------------
+" Highlight the 81st character, rather than forcibly impose a wrap
+" Stolen from Instantly More Better vim
+" http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
+highlight ColorColumn ctermbg=red
+call matchadd('ColorColumn', '\%81v', 100)
 
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
