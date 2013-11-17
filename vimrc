@@ -257,8 +257,8 @@ map <leader>mv :call RenameFile()<cr>
 " Stolen from More Instantly Better Vim
 " http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
 " swap : and ; around to save constant <shifting>
+" actually, don't remap : to ; - it screws with a lot of other people's remaps
 nnoremap ; :
-nnoremap : ;
 
 "-------------------------------------------------------------------------------------
 " Disable automatic line folding
@@ -292,6 +292,10 @@ inoremap <silent> <M-L> <Esc>:TmuxNavigateRight<cr>
 highlight ColorColumn ctermbg=red
 call matchadd('ColorColumn', '\%81v', 100)
 
+"-------------------------------------------------------------------------------------
+" Use S in normal/visual mode as a shortcut to filewide search
+nnoremap S :%s//g<LEFT><LEFT> 
+vnoremap S :s//g<LEFT><LEFT>
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
