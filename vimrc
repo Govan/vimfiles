@@ -297,6 +297,9 @@ call matchadd('ColorColumn', '\%81v', 100)
 nnoremap S :%s//g<LEFT><LEFT> 
 vnoremap S :s//g<LEFT><LEFT>
 "-------------------------------------------------------------------------------------
+" My little iPad keyboard has no Esc key and I can't remap capslock :(
+imap jk <Esc>
+"-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
 
