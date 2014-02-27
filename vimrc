@@ -296,6 +296,15 @@ call matchadd('ColorColumn', '\%81v', 100)
 " Use S in normal/visual mode as a shortcut to filewide search
 nnoremap S :%s//g<LEFT><LEFT> 
 vnoremap S :s//g<LEFT><LEFT>
+
+"-------------------------------------------------------------------------------------
+" Let's try hard mode
+" http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
+noremap h <NOP>
+noremap j <NOP>
+noremap k <NOP>
+noremap l <NOP>
+"
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
