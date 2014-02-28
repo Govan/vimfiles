@@ -298,13 +298,17 @@ nnoremap S :%s//g<LEFT><LEFT>
 vnoremap S :s//g<LEFT><LEFT>
 
 "-------------------------------------------------------------------------------------
-" Let's try hard mode
+" My little iPad keyboard has no Esc key and I can't remap capslock :(
+imap jk <Esc>
+
+"-------------------------------------------------------------------------------------
 " http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
+" Get better with motions by using HARD MODE
 noremap h <NOP>
 noremap j <NOP>
 noremap k <NOP>
 noremap l <NOP>
-"
+
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
