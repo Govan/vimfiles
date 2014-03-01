@@ -310,6 +310,12 @@ noremap k <NOP>
 noremap l <NOP>
 
 "-------------------------------------------------------------------------------------
+" Previous/Next Tab Navigation
+noremap tt<CR> :tabe .<CR>
+noremap th :tabp<CR>
+noremap tn :tabn<CR>
+
+"-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
 
