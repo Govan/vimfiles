@@ -328,6 +328,39 @@ function! HelpInNewTab ()
 endif 
 endfunction
 "-------------------------------------------------------------------------------------
+" Enable persistant undos
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
+" Taken from Instantly Better Vim by http://damian.conway.org/
+" Warn when stepping from current session's undos into those from the previous session
+" Remap the undo key to warn about stepping back into a buffer's pre-history... 
+nnoremap <expr> u VerifyUndo()
+" Track each buffer's starting position in undo history...
+augroup UndoWarnings 
+  autocmd!
+  autocmd BufReadPost,BufNewFile *
+        \ :call Rememberundo_start() 
+augroup END
+
+function! Rememberundo_start ()
+  let b:undo_start = exists('b:undo_start')
+        \ ? b:undo_start
+        \ : undotree().seq_cur
+endfunction
+function! VerifyUndo ()
+  " Are we back at the start of this session " (but still with undos possible)???
+  let undo_now = undotree().seq_cur
+  if undo_now > 0 && undo_now == b:undo_start
+    " If so, ask whether to undo into pre-history...
+    return confirm('', "Undo into previous session? (&Yes\n&No)",1) == 1  ? "\<C-L>u" : "\<C-L>"
+  endif
+  " Otherwise, just undo...
+  return 'u' 
+endfunction
+"-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
 

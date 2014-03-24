@@ -17,6 +17,10 @@ def create_swap_directory
   system %Q{mkdir "$HOME/.vimswap"}
 end
 
+def create_undo_directory 
+  system %Q{mkdir "$HOME/.vim/undo"}
+end
+
 def setup_submodules
   system "git submodule init"
   system "git submodule update"
@@ -53,3 +57,4 @@ replace_file("gvimrc")
 replace_file("vim")
 touch_vimrc_local
 create_swap_directory
+create_undo_directory
