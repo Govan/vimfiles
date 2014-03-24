@@ -315,6 +315,8 @@ noremap tt<CR> :tabe .<CR>
 noremap th :tabp<CR>
 noremap tn :tabn<CR>
 
+"-------------------------------------------------------------------------------------
+" Open help in a new tab
 augroup HelpInTabs 
   autocmd!
   autocmd BufEnter *.txt call HelpInNewTab() 
