@@ -315,6 +315,16 @@ noremap tt<CR> :tabe .<CR>
 noremap th :tabp<CR>
 noremap tn :tabn<CR>
 
+augroup HelpInTabs 
+  autocmd!
+  autocmd BufEnter *.txt call HelpInNewTab() 
+augroup END
+
+function! HelpInNewTab () 
+  if &buftype == 'help'
+  execute "normal \<C-W>T"
+endif 
+endfunction
 "-------------------------------------------------------------------------------------
 " Load in host-dependant settings 
 so ~/.vimrc_local
