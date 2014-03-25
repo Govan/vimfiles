@@ -302,14 +302,6 @@ vnoremap S :s//g<LEFT><LEFT>
 imap jk <Esc>
 
 "-------------------------------------------------------------------------------------
-" http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
-" Get better with motions by using HARD MODE
-noremap h <NOP>
-noremap j <NOP>
-noremap k <NOP>
-noremap l <NOP>
-
-"-------------------------------------------------------------------------------------
 " Previous/Next Tab Navigation
 noremap tt<CR> :tabe .<CR>
 noremap th :tabp<CR>
