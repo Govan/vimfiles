@@ -29,6 +29,7 @@ endif
 set number
 set ruler
 set laststatus=2
+set scrolloff=10
 
 "-------------------------------------------------------------------------------------
 " Treat ' as a word separator, for example when navigating with w and b
