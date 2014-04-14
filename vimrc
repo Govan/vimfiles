@@ -163,8 +163,12 @@ set timeout ttimeoutlen=1
 
 "-------------------------------------------------------------------------------------
 " Map save to a friendlier keystroke
-nnoremap <M-W> <esc>:w<CR>
-inoremap <M-W> <esc>:w<CR>a
+" Note that remapping C-s requires flow control to be disabled
+" (e.g. in .bashrc or .zshrc) with
+" stty start undef
+" stty stop undef
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
 
 "-------------------------------------------------------------------------------------
 command! Q q " Bind :Q to :q
