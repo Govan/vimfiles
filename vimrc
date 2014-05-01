@@ -230,7 +230,7 @@ function! VerifyUndo ()
   let undo_now = undotree().seq_cur
   " And does the buffer have a name?
   let named_file = expand('%:p')
-  if named_file!= "" && undo_now > 0 && undo_now == b:undo_start
+  if (!empty(named_file)) && undo_now > 0 && undo_now == b:undo_start
     " If so, ask whether to undo into pre-history...
     return confirm('', "Undo into previous session? (&Yes\n&No)",1) == 1  ? "\<C-L>u" : "\<C-L>"
   endif
