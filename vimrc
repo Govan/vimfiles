@@ -330,13 +330,6 @@ imap jk <Esc>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 " }}}
-" map ; to : in normal mode, save yourself from hitting shift {{{
-" Stolen from More Instantly Better Vim
-" http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
-" swap : and ; around to save constant <shifting>
-" actually, don't remap : to ; - it screws with a lot of other people's remaps
-nnoremap ; :
-" }}}
 
 " Load in host-dependant settings 
 so ~/.vimrc_local
