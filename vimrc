@@ -335,7 +335,7 @@ imap <C-s> <esc>:w<CR>
 " http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
 " swap : and ; around to save constant <shifting>
 " actually, don't remap : to ; - it screws with a lot of other people's remaps
-" nnoremap ; :
+nnoremap ; :
 " }}}
 
 " Load in host-dependant settings 
