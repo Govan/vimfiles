@@ -136,8 +136,11 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 " }}}
+" Default to writing to the system clipboard {{{
+set clipboard=unnamed
+" }}}
 
-"" Searching {{{
+" Searching {{{
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
@@ -319,8 +322,10 @@ au BufRead,BufNewFile {Berksfile,Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile
 " It's not used, it's a common typo, so let's fix it
 command! Q q " Bind :Q to :q
 " }}}
-" Remap jk to Escape {{{
-imap jk <Esc>
+" Remap kj to Escape {{{
+" Why not jk? Because it results in a small pause on pressing 'j' which makes
+" macros that move the cursor to the next line impossible.
+imap kj <Esc>
 " }}}
 " Remap save to a friendlier keystroke {{{
 " Note that remapping C-s requires flow control to be disabled
