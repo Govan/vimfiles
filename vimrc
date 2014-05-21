@@ -12,6 +12,8 @@ set directory=~/.vimswap
 set nobackup
 set noswapfile
 set winheight=11
+
+set timeout ttimeoutlen=1
 " }}}
 " Use Pathogen to manage plugins {{{
 " https://github.com/tpope/vim-pathogen 
@@ -38,11 +40,11 @@ map <Esc>[C <Right>
 map <Esc>[D <Left>
 " ----------------------------------------------------------------------
 " Remap tmux-vim-navigator to use <m-direction> rather than <c-direction>
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <M-H> :TmuxNavigateLeft<cr>
-nnoremap <silent> <M-J> :TmuxNavigateDown<cr>
-nnoremap <silent> <M-K> :TmuxNavigateUp<cr>
-nnoremap <silent> <M-L> :TmuxNavigateRight<cr>
+" let g:tmux_navigator_no_mappings = 1
+" nnoremap <silent> <M-H> :TmuxNavigateLeft<cr>
+" nnoremap <silent> <M-J> :TmuxNavigateDown<cr>
+" nnoremap <silent> <M-K> :TmuxNavigateUp<cr>
+" nnoremap <silent> <M-L> :TmuxNavigateRight<cr>
 
 inoremap <silent> <M-H> <Esc>:TmuxNavigateLeft<cr>
 inoremap <silent> <M-J> <Esc>:TmuxNavigateDown<cr>
@@ -75,32 +77,6 @@ set noerrorbells visualbell t_vb=
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
-" }}}
-" fix meta-keys which generate <Esc>a .. <Esc>z {{{
-" http://stackoverflow.com/questions/6778961/alt-key-shortcuts-not-working-on-gnome-terminal-with-vim
-" There are two ways for a terminal emulator to send an Alt key (usually
-" called a Meta key as actual terminals didn't have Alt). It can either send 8
-" bit characters and set the high bit when Alt is used, or it can use escape
-" sequences, sending Alt-a as <Esc>a. Vim expects to see the 8 bit encoding
-" rather than the escape sequence.
-"
-" Some terminal emulators such as xterm can be set to use either mode, but
-" Gnome terminal doesn't offer any such setting. To be honest in these days of
-" Unicode editing, the 8-bit encoding is not such a good idea anyway. But
-" escape sequences are not problem free either; they offer no way of
-" distinguishing between <Esc>j meaning Alt-j vs pressing Esc followed by j.
-"
-" In earlier terminal use, typing Escj was another way to send a Meta on a
-" keyboard without a Meta key, but this doesn't fit well with vi's use of Esc
-" to leave insert mode.
-
-let c='a'
-while c <= 'z'
-  exec "set <M-".toupper(c).">=\e".c
-  exec "imap \e".c." <M-".toupper(c).">"
-  let c = nr2char(1+char2nr(c))
-endw
-set timeout ttimeoutlen=1
 " }}}
 " <c-x>, <c-a> increment as padded decimals rather than octals {{{
 set nrformats=
