@@ -39,17 +39,6 @@ map <Esc>[B <Down>
 map <Esc>[C <Right>
 map <Esc>[D <Left>
 " ----------------------------------------------------------------------
-" Remap tmux-vim-navigator to use <m-direction> rather than <c-direction>
-" let g:tmux_navigator_no_mappings = 1
-" nnoremap <silent> <M-H> :TmuxNavigateLeft<cr>
-" nnoremap <silent> <M-J> :TmuxNavigateDown<cr>
-" nnoremap <silent> <M-K> :TmuxNavigateUp<cr>
-" nnoremap <silent> <M-L> :TmuxNavigateRight<cr>
-
-inoremap <silent> <M-H> <Esc>:TmuxNavigateLeft<cr>
-inoremap <silent> <M-J> <Esc>:TmuxNavigateDown<cr>
-inoremap <silent> <M-K> <Esc>:TmuxNavigateUp<cr>
-inoremap <silent> <M-L> <Esc>:TmuxNavigateRight<cr>
 " }}}
 " 'Window' Options {{{
 set number
