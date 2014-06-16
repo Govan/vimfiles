@@ -308,5 +308,10 @@ imap <C-s> <esc>:w<CR>
 nnoremap ; :
 " }}}
 
+" Give myself a HardTime{{{
+" https://github.com/takac/vim-hardtime
+let g:hardtime_default_on = 1
+" }}}
+
 " Load in host-dependant settings 
 so ~/.vimrc_local
