@@ -167,9 +167,10 @@ noremap! <M-R> <esc>:bn<CR>
 noremap! <M-C> <esc>:bp<CR>
 "
 " Previous/Next Tab Navigation
-noremap tt<CR> :tabe .<CR>
-noremap th :tabp<CR>
-noremap tn :tabn<CR>
+" Turning tab navigation off until I sort out the Dvorak homerow
+"noremap tt<CR> :tabe .<CR>
+"noremap th :tabp<CR>
+"noremap tn :tabn<CR>
 " }}}
 " Persistant undos {{{
 " Taken from Instantly Better Vim by http://damian.conway.org/
@@ -310,8 +311,39 @@ nnoremap ; :
 
 " Give myself a HardTime{{{
 " https://github.com/takac/vim-hardtime
-let g:hardtime_default_on = 1
+" let g:hardtime_default_on = 1
 " }}}
 
+" Remap the Dvorak RHS home row to behave as directions{{{
+
+nnoremap l s 
+nnoremap L S 
+nnoremap s l
+noremap S L
+vnoremap l s 
+vnoremap L S 
+vnoremap s l
+vnoremap S L
+
+nnoremap t j
+nnoremap T J
+nnoremap j t
+nnoremap J T
+vnoremap t j
+vnoremap T J
+vnoremap j t
+vnoremap J T
+
+nnoremap n k
+nnoremap N K
+nnoremap k n
+nnoremap K N
+ 
+vnoremap n k
+vnoremap N K
+vnoremap k n
+vnoremap K N
+
+" }}}
 " Load in host-dependant settings 
 so ~/.vimrc_local
