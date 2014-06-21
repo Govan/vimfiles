@@ -315,7 +315,6 @@ nnoremap ; :
 " }}}
 
 " Remap the Dvorak RHS home row to behave as directions{{{
-
 nnoremap l s 
 nnoremap L S 
 nnoremap s l
@@ -343,7 +342,20 @@ vnoremap n k
 vnoremap N K
 vnoremap k n
 vnoremap K N
-
 " }}}
+
+" Fix Dvorak up/down to play nicely with netrw {{{
+" netrw overloads 't' with open-in-new-tab
+" http://unix.stackexchange.com/questions/31575/remapping-keys-in-vims-directory-view
+" The solution is a buffer-only remap. Will probably add to this over time
+augroup netrw_dvorak_fix
+    autocmd!
+    autocmd filetype netrw call Fix_netrw_maps_for_dvorak()
+augroup END
+function! Fix_netrw_maps_for_dvorak()
+    noremap <buffer> t j
+endfunction
+" }}}
+
 " Load in host-dependant settings 
 so ~/.vimrc_local
