@@ -1,4 +1,6 @@
 " vim: foldmethod=marker
+"
+let mapleader="`"
 
 " Unsorted {{{
 set nocompatible                " choose no compatibility with legacy vi
@@ -178,9 +180,9 @@ noremap! <M-C> <esc>:bp<CR>
 "
 " Previous/Next Tab Navigation
 " Turning tab navigation off until I sort out the Dvorak homerow
-"noremap tt<CR> :tabe .<CR>
-"noremap th :tabp<CR>
-"noremap tn :tabn<CR>
+noremap <leader>t :tabe .<CR>
+noremap <leader>h :tabp<CR>
+noremap <leader>s :tabn<CR>
 " }}}
 " Persistant undos {{{
 " Taken from Instantly Better Vim by http://damian.conway.org/
