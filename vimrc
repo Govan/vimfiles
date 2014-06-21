@@ -38,6 +38,15 @@ map <Esc>[A <Up>
 map <Esc>[B <Down>
 map <Esc>[C <Right>
 map <Esc>[D <Left>
+
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-t>  :TmuxNavigateDown<cr>
+nnoremap <silent> <C-n> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-s> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-u> :TmuxNavigatePrevious<cr>
+
+
 " ----------------------------------------------------------------------
 " }}}
 " 'Window' Options {{{
@@ -126,8 +135,9 @@ endif
 " }}}
 " Fuzzy File Finder {{{
 " Use CtrlP for project navigation
-noremap <C-t> :CtrlP<CR>
-noremap! <C-t> <esc>:CtrlP<CR>
+" Turning fuzzy finder off while I sort out tmux/vim split navigation
+noremap <C-@> :CtrlP<CR>
+noremap! <C-@> <esc>:CtrlP<CR>
 
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git
@@ -293,14 +303,12 @@ command! Q q " Bind :Q to :q
 " macros that move the cursor to the next line impossible.
 imap kj <Esc>
 " }}}
-" Remap save to a friendlier keystroke {{{
-" Note that remapping C-s requires flow control to be disabled
-" (e.g. in .bashrc or .zshrc) with
-" stty start undef
-" stty stop undef
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
+
+" Remap save to a friendlier keystroke c-w {{{
+map <C-w> <esc>:w<CR>
+imap <C-w> <esc>:w<CR>a
 " }}}
+
 " map ; to : in normal mode, save yourself from hitting shift {{{
 " Stolen from More Instantly Better Vim
 " http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
