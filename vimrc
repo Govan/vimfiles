@@ -1,6 +1,6 @@
 " vim: foldmethod=marker
 "
-let mapleader="`"
+let mapleader="-"
 
 " Unsorted {{{
 set nocompatible                " choose no compatibility with legacy vi
