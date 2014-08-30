@@ -43,10 +43,16 @@ map <Esc>[D <Left>
 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-t>  :TmuxNavigateDown<cr>
+nnoremap <silent> <C-t> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-n> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-s> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-u> :TmuxNavigatePrevious<cr>
+
+inoremap <silent> <C-h> <Esc>:TmuxNavigateLeft<cr>
+inoremap <silent> <C-t> <Esc>:TmuxNavigateDown<cr>
+inoremap <silent> <C-n> <Esc>:TmuxNavigateUp<cr>
+inoremap <silent> <C-s> <Esc>:TmuxNavigateRight<cr>
+inoremap <silent> <C-u> <Esc>:TmuxNavigatePrevious<cr>
 
 
 " ----------------------------------------------------------------------
