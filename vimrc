@@ -1,6 +1,6 @@
 " vim: foldmethod=marker
 "
-let mapleader="-"
+let mapleader=" "
 
 " Unsorted {{{
 set nocompatible                " choose no compatibility with legacy vi
@@ -300,10 +300,10 @@ au BufRead,BufNewFile {Berksfile,Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile
 " It's not used, it's a common typo, so let's fix it
 command! Q q " Bind :Q to :q
 " }}}
-" Remap kj to Escape {{{
+" Remap ii to Escape {{{
 " Why not jk? Because it results in a small pause on pressing 'j' which makes
 " macros that move the cursor to the next line impossible.
-imap kj <Esc>
+imap ii <Esc>
 " }}}
 
 " Remap save to a friendlier keystroke c-w {{{
