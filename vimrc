@@ -118,9 +118,6 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 " }}}
-" Default to writing to the system clipboard {{{
-set clipboard=unnamed
-" }}}
 
 " Searching {{{
 set incsearch                   " incremental searching
