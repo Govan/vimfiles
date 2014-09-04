@@ -109,8 +109,8 @@ set nofoldenable
 " <number>z= to insert the word at than index from the list and jump back to
 " the buffer
 set spelllang=en_gb
-nnoremap <leader>s ]s 
-nnoremap <leader>n [s
+nnoremap <leader>S ]s 
+nnoremap <leader>N [s
 " }}}
 " Remember last location in file {{{
 if has("autocmd")
@@ -176,16 +176,14 @@ set hidden
 map ,, <C-^>         
 
 " Move between buffers with alt+h/l 
-noremap <M-R> :bn<CR>
-noremap <M-C> :bp<CR>
-noremap! <M-R> <esc>:bn<CR>
-noremap! <M-C> <esc>:bp<CR>
+noremap <leader>h :bn<CR>
+noremap <leader>s :bp<CR>
 "
 " Previous/Next Tab Navigation
 " Turning tab navigation off until I sort out the Dvorak homerow
-noremap <leader>t :tabe .<CR>
-noremap <leader>h :tabp<CR>
-noremap <leader>s :tabn<CR>
+"noremap <leader>t :tabe .<CR>
+"noremap <leader>h :tabp<CR>
+"noremap <leader>s :tabn<CR>
 " }}}
 " Persistant undos {{{
 " Taken from Instantly Better Vim by http://damian.conway.org/
