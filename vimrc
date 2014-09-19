@@ -46,13 +46,11 @@ nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-t> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-n> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-s> :TmuxNavigateRight<cr>
-nnoremap <silent> <C-u> :TmuxNavigatePrevious<cr>
 
 inoremap <silent> <C-h> <Esc>:TmuxNavigateLeft<cr>
 inoremap <silent> <C-t> <Esc>:TmuxNavigateDown<cr>
 inoremap <silent> <C-n> <Esc>:TmuxNavigateUp<cr>
 inoremap <silent> <C-s> <Esc>:TmuxNavigateRight<cr>
-inoremap <silent> <C-u> <Esc>:TmuxNavigatePrevious<cr>
 
 
 " ----------------------------------------------------------------------
@@ -143,6 +141,8 @@ endif
 " Turning fuzzy finder off while I sort out tmux/vim split navigation
 noremap <C-@> :CtrlP<CR>
 noremap! <C-@> <esc>:CtrlP<CR>
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_use_caching = 0
 
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git
@@ -175,7 +175,7 @@ set hidden
 " swap between active/last-active files without stretching
 map ,, <C-^>         
 
-" Move between buffers with alt+h/l 
+" Move between buffers 
 noremap <leader>h :bn<CR>
 noremap <leader>s :bp<CR>
 "
