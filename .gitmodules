@@ -43,3 +43,9 @@
 [submodule "vim/bundle/vim-hardtime"]
 	path = vim/bundle/vim-hardtime
 	url = https://github.com/takac/vim-hardtime.git
+[submodule "vim/bundle/tslime.vim"]
+	path = vim/bundle/tslime.vim
+	url = https://github.com/jgdavey/tslime.vim
+[submodule "vim/bundle/vim-rspec"]
+	path = vim/bundle/vim-rspec
+	url = https://github.com/thoughtbot/vim-rspec.git

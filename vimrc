@@ -367,6 +367,15 @@ function! Fix_netrw_maps_for_dvorak()
     noremap <buffer> t j
 endfunction
 " }}}
+"
+"
+" RSpec.vim mappings to send tests to tmux {{{
+ map <Leader>o :call RunLastSpec()<CR>
+ map <Leader>a :call RunNearestSpec()<CR>
+ map <Leader>A :call RunCurrentSpecFile()<CR>
+ map <Leader>O :call RunAllSpecs()<CR>
+ let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+" }}}
 
 " Load in host-dependant settings 
 so ~/.vimrc_local
