@@ -312,6 +312,15 @@ map <C-w> <esc>:w<CR>
 imap <C-w> <esc>:w<CR>a
 " }}}
 
+
+" Save to the system clipboard via leader {{{
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
 " map ; to : in normal mode, save yourself from hitting shift {{{
 " Stolen from More Instantly Better Vim
 " http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
