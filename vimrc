@@ -141,7 +141,7 @@ endif
 " Turning fuzzy finder off while I sort out tmux/vim split navigation
 noremap <C-@> :CtrlP<CR>
 noremap! <C-@> <esc>:CtrlP<CR>
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f', 'tags']
 let g:ctrlp_use_caching = 0
 
 set wildmode=list:longest,list:full
@@ -312,6 +312,16 @@ map <C-w> <esc>:w<CR>
 imap <C-w> <esc>:w<CR>a
 " }}}
 
+" Copy and paste to system clipboard more easily {{{
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+" }}}
+
+
 " map ; to : in normal mode, save yourself from hitting shift {{{
 " Stolen from More Instantly Better Vim
 " http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
@@ -374,7 +384,7 @@ endfunction
  map <Leader>a :call RunNearestSpec()<CR>
  map <Leader>A :call RunCurrentSpecFile()<CR>
  map <Leader>O :call RunAllSpecs()<CR>
- let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+ let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 " }}}
 
 " Load in host-dependant settings 
