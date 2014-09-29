@@ -312,7 +312,7 @@ map <C-w> <esc>:w<CR>
 imap <C-w> <esc>:w<CR>a
 " }}}
 
-" Copy and paste to system clipboard more easily {{{
+" Save to the system clipboard via leader {{{
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
