@@ -380,9 +380,9 @@ endfunction
 "
 "
 " RSpec.vim mappings to send tests to tmux {{{
- map <Leader>o :call RunLastSpec()<CR>
- map <Leader>a :call RunNearestSpec()<CR>
- map <Leader>A :call RunCurrentSpecFile()<CR>
+ map <Leader>o :w<CR>:call RunLastSpec()<CR>
+ map <Leader>a :w<CR>:call RunNearestSpec()<CR>
+ map <Leader>A :w<C>:call RunCurrentSpecFile()<CR>
  map <Leader>O :call RunAllSpecs()<CR>
  let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 " }}}
