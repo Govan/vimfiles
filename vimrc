@@ -73,7 +73,11 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 " }}}
+
 " Enable Mouse Control {{{
+" Enable draggable panels for resizing
+set ttyfast 
+set ttymouse=xterm2
 set mouse=a
 " }}}
 " Disable bell {{{
