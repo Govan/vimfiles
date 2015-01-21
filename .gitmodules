@@ -51,4 +51,4 @@
 	url = https://github.com/thoughtbot/vim-rspec.git
 [submodule "vim/bundle/vim-superman"]
 	path = vim/bundle/vim-superman
-	url = git@github.com:Z1MM32M4N/vim-superman.git
+	url = https://github.com/Z1MM32M4N/vim-superman.git
