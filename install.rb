@@ -9,16 +9,16 @@ def install_powerline
 end
 
 def replace_file(file)
-  system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
+  system %Q{rm -rf "~#{@home}/.#{file.sub('.erb', '')}"}
   link_file(file)
 end
 
 def create_swap_directory 
-  system %Q{mkdir "$HOME/.vimswap"}
+  system %Q{mkdir "~#{@home}/.vimswap"}
 end
 
 def create_undo_directory 
-  system %Q{mkdir "$HOME/.vim/undo"}
+  system %Q{mkdir "~#{@home}/.vim/undo"}
 end
 
 def setup_submodules
@@ -27,7 +27,7 @@ def setup_submodules
 end
 
 def touch_vimrc_local
-  target = File.expand_path("~/.vimrc_local")
+  target = File.expand_path("~#{@home}/.vimrc_local")
   unless File.exists? target
     File.open(target, 'w') do |new_file|
       new_file << "\" Put private customizations in here\n"
@@ -39,17 +39,19 @@ end
 
 def link_file(file)
   if file =~ /.erb$/
-    puts "generating ~/.#{file.sub('.erb', '')}"
-    File.open(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"), 'w') do |new_file|
+    puts "generating ~#{@home}/.#{file.sub('.erb', '')}"
+    File.open(File.join("~#{@home}", ".#{file.sub('.erb', '')}"), 'w') do |new_file|
       new_file.write ERB.new(File.read(file)).result(binding)
     end
   else
-    puts "linking ~/.#{file}"
-    system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
+    puts "linking ~#{@home}/.#{file}"
+    system %Q{ln -s "$PWD/#{file}" "~#{@home}/.#{file}"}
   end
 end
 
 ##########################################################
+require 'etc'
+@home = Etc.getpwuid(Process::UID.eid).name
 setup_submodules
 #install_powerline if ARGV[0] == "--with-powerline"
 replace_file("vimrc")
