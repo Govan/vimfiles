@@ -186,6 +186,12 @@ map ,, <C-^>
 " Move between buffers 
 noremap <leader>h :bn<CR>
 noremap <leader>s :bp<CR>
+
+" Close the current buffer and move to the next one, removing the original
+" from the bufferlist
+" evernote:///view/46596/s1/8c9ce88a-7b93-4b3b-be11-1ab26461377a/8c9ce88a-7b93-4b3b-be11-1ab26461377a/
+nmap <leader>q :b#<bar>bd#<CR>
+
 "
 " Previous/Next Tab Navigation
 " Turning tab navigation off until I sort out the Dvorak homerow
