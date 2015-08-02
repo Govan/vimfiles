@@ -17,11 +17,13 @@ set winheight=11
 
 set timeout ttimeoutlen=1
 " }}}
+
 " Use Pathogen to manage plugins {{{
 " https://github.com/tpope/vim-pathogen 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 " }}}
+
 " iTerm Color fix {{{
 "-------------------------------------------------------------------------------------
 " I'm not quite sure what this does, but it fixes a colour issue with vim
@@ -33,6 +35,7 @@ call pathogen#infect()
 " With this is place colours work both in and out of tmux 
 "-------------------------------------------------------------------------------------
 " }}}
+
 " Tmux {{{
 " Arrow keys tend to play silly buggers when running inside tmux
 " http://superuser.com/questions/215180/when-running-screen-on-osx-commandr-messes-up-arrow-keys-in-vim-across-all-scr
@@ -55,6 +58,7 @@ inoremap <silent> <C-s> <Esc>:TmuxNavigateRight<cr>
 
 " ----------------------------------------------------------------------
 " }}}
+
 " 'Window' Options {{{
 set number
 set ruler
@@ -80,12 +84,14 @@ set ttyfast
 set ttymouse=xterm2
 set mouse=a
 " }}}
+
 " Disable bell {{{
 set noerrorbells visualbell t_vb=
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 " }}}
+
 " <c-x>, <c-a> increment as padded decimals rather than octals {{{
 set nrformats=
 " }}}
@@ -96,15 +102,18 @@ set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 " }}}
+
 " Turn off the current line highlight {{{
 " it makes syntax enabled file very,
 " very laggy when moving, or at least it does when used in combination with
 " the rest of my setup. Possibly something to do with string highlighting?
 set nocursorline
 " }}}
+
 " Disable automatic line folding {{{
 set nofoldenable
 " }}}
+
 " Spellchecking {{{
 " A note here, because you'll forget 
 " z= brings up the correction page
@@ -114,6 +123,7 @@ set spelllang=en_gb
 nnoremap <leader>S ]s 
 nnoremap <leader>N [s
 " }}}
+
 " Remember last location in file {{{
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -127,19 +137,12 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 set nohlsearch                  " don't highlight on search
 " }}}
+
 " Treat ' as a word separator {{{
 set iskeyword+=^.
 " }}}
-" Project Search {{{
-" If we have it use Silver Searcher or use ack instead
-set grepprg=ack
-if executable("ag")
-  set grepprg=ag\ --nogroup\ --nocolor
-  " let g:ctrlp_user_command = 'ag %s -t -l --nocolor --hidden -g ""'
-  let g:ackprg = 'ag --nogroup --nocolor --column'
-endif
 
-" }}}
+
 " Fuzzy File Finder {{{
 " Use CtrlP for project navigation
 " Turning fuzzy finder off while I sort out tmux/vim split navigation
@@ -149,14 +152,38 @@ noremap! <C-@> <esc>:CtrlP<CR>
 noremap <C-y> :CtrlPBuffer<CR>
 noremap! <C-y> <esc>:CtrlPBuffer<CR>
 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f', 'tags']
-let g:ctrlp_use_caching = 0
+" We're not using this custom command - just assume that ag is accessible
+" further down. I can't nicely exclude images with this form
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f', 'tags']
+"let g:ctrlp_use_caching = 0
 
+" Note that, because I'm using a ctrlp_user_command, the list below doesn't
+" have any effect.
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif
 set wildignore+=*.rsync_cache
 " }}}
+"
+" Project Search {{{
+" If we have it use Silver Searcher or use ack instead
+set grepprg=ack
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --hidden 
+        \ --ignore .git
+        \ --ignore .svn
+        \ --ignore "*.png"
+        \ --ignore "*.jpg"
+        \ --ignore "*.gif"
+        \ --ignore .hg
+        \ --ignore .DS_Store
+        \ --ignore "**/*.pyc"
+        \ -g ""'
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+" }}}
+
 " Solarized colourscheme {{{
 " https://github.com/altercation/vim-colors-solarizedHH˙˙˙
 colorscheme solarized
@@ -166,10 +193,12 @@ if has('gui_running')
 endif
 set background=light
 " }}}
+
 " Use S in normal/visual mode as a shortcut to filewide search {{{
 nnoremap S :%s//g<LEFT><LEFT> 
 vnoremap S :s//g<LEFT><LEFT>
 " }}}
+
 " Browser search for what's under the cursor {{{
 " https://github.com/vim-scripts/open-browser.vim
 let g:netrw_nogx = 1 
@@ -199,6 +228,7 @@ nmap <leader>q :b#<bar>bd#<CR>
 "noremap <leader>h :tabp<CR>
 "noremap <leader>s :tabn<CR>
 " }}}
+
 " Persistant undos {{{
 " Taken from Instantly Better Vim by http://damian.conway.org/
 " Warn when stepping from current session's undos into those from the previous session
@@ -207,8 +237,8 @@ set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
-
 nnoremap <expr> u VerifyUndo()
+
 " Track each buffer's starting position in undo history...
 augroup UndoWarnings 
   autocmd!
@@ -234,6 +264,7 @@ function! VerifyUndo ()
   return 'u' 
 endfunction
 " }}}
+
 " Open help in a new tab {{{
 augroup HelpInTabs 
   autocmd!
@@ -246,10 +277,12 @@ function! HelpInNewTab ()
 endif 
 endfunction
 " }}}
+
 " Stop Supertab from trying to traverse included files {{{
 " The include behaviour wasn't working at all.
 set complete=.,w,b,u,t
 " }}}
+
 " Highlight the 81st character, rather than forcibly impose a wrap {{{
 " Stolen from Instantly More Better vim
 " http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
@@ -259,9 +292,9 @@ call matchadd('ColorColumn', '\%81v', 100)
 " Expand %% to the directory of the currently open buffer {{{
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " }}}
+
 " Switch <file> and <file>_spec {{{
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
-"-------------------------------------------------------------------------------------
 function! OpenTestAlternate()
   let new_file = AlternateForCurrentFile()
   exec ':e ' . new_file
@@ -289,6 +322,7 @@ function! AlternateForCurrentFile()
 endfunction
 nnoremap <leader>. :call OpenTestAlternate()<cr>
 " }}}
+
 " rename current file {{{
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 function! RenameFile()
@@ -302,19 +336,24 @@ function! RenameFile()
 endfunction
 map <leader>mv :call RenameFile()<cr>
 " }}}
+
 " Wrap markdown files {{{
 au BufRead,BufNewFile *.md setlocal textwidth=80
 " }}}
+
 " Format Thorfile, Rakefile and Gemfile as Ruby {{{
 au BufRead,BufNewFile {Berksfile,Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 " }}}
+
 " Make . run on every selected line in visual mode {{{
 :vnoremap . :norm.<CR>
 " }}}
+
 " Map quit to :Q {{{
 " It's not used, it's a common typo, so let's fix it
 command! Q q " Bind :Q to :q
 " }}}
+
 " Remap ii to Escape {{{
 " Why not jk? Because it results in a small pause on pressing 'j' which makes
 " macros that move the cursor to the next line impossible.
@@ -381,8 +420,7 @@ function! Fix_netrw_maps_for_dvorak()
     noremap <buffer> t j
 endfunction
 " }}}
-"
-"
+
 " RSpec.vim mappings to send tests to tmux {{{
  map <Leader>o :w<CR>:call RunLastSpec()<CR>
  map <Leader>a :w<CR>:call RunNearestSpec()<CR>
