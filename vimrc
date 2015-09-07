@@ -185,13 +185,22 @@ endif
 " }}}
 
 " Solarized colourscheme {{{
-" https://github.com/altercation/vim-colors-solarizedHH˙˙˙
+" https://github.com/altercation/vim-colors-solarized
 colorscheme solarized
 set guifont=Monaco:h12
 if has('gui_running')
   " Do nothing
 endif
 set background=light
+" }}}
+
+" Airline {{{
+" https://github.com/bling/vim-airline
+" You'll also want the powerline patched font
+" https://github.com/powerline/fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf
+"-------------------------------------------------------------------------------------
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1 
 " }}}
 
 " Use S in normal/visual mode as a shortcut to filewide search {{{
