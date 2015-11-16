@@ -363,12 +363,6 @@ au BufRead,BufNewFile {Berksfile,Guardfile,Vagrantfile,Gemfile,Rakefile,Thorfile
 command! Q q " Bind :Q to :q
 " }}}
 
-" Remap ii to Escape {{{
-" Why not jk? Because it results in a small pause on pressing 'j' which makes
-" macros that move the cursor to the next line impossible.
-imap ii <Esc>
-" }}}
-
 " Remap save to a friendlier keystroke c-w {{{
 map <C-w> <esc>:w<CR>
 imap <C-w> <esc>:w<CR>a
