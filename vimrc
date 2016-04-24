@@ -55,7 +55,17 @@ inoremap <silent> <C-t> <Esc>:TmuxNavigateDown<cr>
 inoremap <silent> <C-n> <Esc>:TmuxNavigateUp<cr>
 inoremap <silent> <C-s> <Esc>:TmuxNavigateRight<cr>
 
+" ----------------------------------------------------------------------
+" }}}
 
+
+" Show Invisibles {{{
+" Highlight tabs and end of line characters
+set list
+set listchars=tab:▸\ ,eol:¬
+
+hi NonText        ctermfg=red    ctermbg=white    cterm=NONE
+hi SpecialKey     ctermfg=red       ctermbg=white    cterm=NONE
 " ----------------------------------------------------------------------
 " }}}
 
@@ -434,3 +444,5 @@ endfunction
 
 " Load in host-dependant settings 
 so ~/.vimrc_local
+
+
