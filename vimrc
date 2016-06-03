@@ -19,7 +19,7 @@ set timeout ttimeoutlen=1
 " }}}
 
 " Use Pathogen to manage plugins {{{
-" https://github.com/tpope/vim-pathogen 
+" https://github.com/tpope/vim-pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 " }}}
@@ -29,10 +29,10 @@ call pathogen#infect()
 " I'm not quite sure what this does, but it fixes a colour issue with vim
 " running in iTerm
 " set t_Co=256
-" Update - Turns out I don't need this provided 
+" Update - Turns out I don't need this provided
 " a) .tmux.conf declares screen-256colors
 " b) iTerm declares as xTerm-256colors
-" With this is place colours work both in and out of tmux 
+" With this is place colours work both in and out of tmux
 "-------------------------------------------------------------------------------------
 " }}}
 
@@ -76,7 +76,7 @@ set laststatus=2
 set scrolloff=10
 " -------------------------------------------------------------------
 " Use block cursor in normal mode and a vertical line in insert mode
-" taken from https://gist.github.com/1195581 
+" taken from https://gist.github.com/1195581
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
 if exists('$TMUX')
@@ -90,7 +90,7 @@ endif
 
 " Enable Mouse Control {{{
 " Enable draggable panels for resizing
-set ttyfast 
+set ttyfast
 set ttymouse=xterm2
 set mouse=a
 " }}}
@@ -125,12 +125,12 @@ set nofoldenable
 " }}}
 
 " Spellchecking {{{
-" A note here, because you'll forget 
+" A note here, because you'll forget
 " z= brings up the correction page
 " <number>z= to insert the word at than index from the list and jump back to
 " the buffer
 set spelllang=en_gb
-nnoremap <leader>S ]s 
+nnoremap <leader>S ]s
 nnoremap <leader>N [s
 " }}}
 
@@ -180,7 +180,7 @@ set wildignore+=*.rsync_cache
 set grepprg=ack
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -i --nocolor --hidden 
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --hidden
         \ --ignore .git
         \ --ignore .svn
         \ --ignore "*.png"
@@ -210,17 +210,17 @@ set background=light
 " https://github.com/powerline/fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf
 "-------------------------------------------------------------------------------------
 let g:airline_theme='solarized'
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 " }}}
 
 " Use S in normal/visual mode as a shortcut to filewide search {{{
-nnoremap S :%s//g<LEFT><LEFT> 
+nnoremap S :%s//g<LEFT><LEFT>
 vnoremap S :s//g<LEFT><LEFT>
 " }}}
 
 " Browser search for what's under the cursor {{{
 " https://github.com/vim-scripts/open-browser.vim
-let g:netrw_nogx = 1 
+let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 " }}}
@@ -229,9 +229,9 @@ vmap gx <Plug>(openbrowser-smart-search)
 "  allow buffer swapping when the current buffer is unsaved
 set hidden
 " swap between active/last-active files without stretching
-map ,, <C-^>         
+map ,, <C-^>
 
-" Move between buffers 
+" Move between buffers
 noremap <leader>h :bn<CR>
 noremap <leader>s :bp<CR>
 
@@ -251,7 +251,7 @@ nmap <leader>q :b#<bar>bd#<CR>
 " Persistant undos {{{
 " Taken from Instantly Better Vim by http://damian.conway.org/
 " Warn when stepping from current session's undos into those from the previous session
-" Remap the undo key to warn about stepping back into a buffer's pre-history... 
+" Remap the undo key to warn about stepping back into a buffer's pre-history...
 set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
@@ -259,10 +259,10 @@ set undoreload=10000        " number of lines to save for undo
 nnoremap <expr> u VerifyUndo()
 
 " Track each buffer's starting position in undo history...
-augroup UndoWarnings 
+augroup UndoWarnings
   autocmd!
   autocmd BufReadPost,BufNewFile *
-        \ :call Rememberundo_start() 
+        \ :call Rememberundo_start()
 augroup END
 
 function! Rememberundo_start ()
@@ -280,20 +280,20 @@ function! VerifyUndo ()
     return confirm('', "Undo into previous session? (&Yes\n&No)",1) == 1  ? "\<C-L>u" : "\<C-L>"
   endif
   " Otherwise, just undo...
-  return 'u' 
+  return 'u'
 endfunction
 " }}}
 
 " Open help in a new tab {{{
-augroup HelpInTabs 
+augroup HelpInTabs
   autocmd!
-  autocmd BufEnter *.txt call HelpInNewTab() 
+  autocmd BufEnter *.txt call HelpInNewTab()
 augroup END
 
-function! HelpInNewTab () 
+function! HelpInNewTab ()
   if &buftype == 'help'
   execute "normal \<C-W>T"
-endif 
+endif
 endfunction
 " }}}
 
@@ -392,12 +392,12 @@ nnoremap ; :
 " }}}
 
 " Remap the Dvorak RHS home row to behave as directions{{{
-nnoremap l s 
-nnoremap L S 
+nnoremap l s
+nnoremap L S
 nnoremap s l
 noremap S L
-vnoremap l s 
-vnoremap L S 
+vnoremap l s
+vnoremap L S
 vnoremap s l
 vnoremap S L
 
@@ -414,7 +414,7 @@ nnoremap n k
 nnoremap N K
 nnoremap k n
 nnoremap K N
- 
+
 vnoremap n k
 vnoremap N K
 vnoremap k n
@@ -442,7 +442,22 @@ endfunction
  let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 " }}}
 
-" Load in host-dependant settings 
+" Trim trailing whitespace on save. {{{
+" Stolen from
+" http://stackoverflow.com/questions/356126/how-can-you-automatically-remove-trailing-whitespace-in-vim
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+
+" This is rather aggressive - it'll strip all trailing whitespace on all
+" files. That might bo overkill, but sod it.
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" }}}
+
+" Load in host-dependant settings
 so ~/.vimrc_local
 
 
