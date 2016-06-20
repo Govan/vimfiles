@@ -38,17 +38,17 @@ install_git_submodules() {
   git submodule update
 }
 create_swap_directory() {
-  mkdir "$HOME/.vimswap"
+  mkdir -p "$HOME/.vimswap"
 }
 
 create_undo_directory() {
-  mkdir "$HOME/.vim/undo"
+  mkdir -p "$HOME/.vim/undo"
 }
 
 link_files() {
   local source_directory=$(dirname "$(cd "$(dirname "$0")" && pwd)/$(basename "$0")")
   for file in $source_directory/*
-  do 
+  do
     link_file $file
   done
 }
@@ -56,7 +56,7 @@ link_files() {
 link_file() {
   local source=$1
   local filename=$(basename "$source");
-  if [ $filename == "install.sh" -o $filename == "README.md" ] 
+  if test $filename = "install.sh" -o $filename = "README.md"
   then
     echo "skipping $filename"
   else
@@ -66,7 +66,7 @@ link_file() {
 
 touch_vimrc_local() {
   local vimrc_local="$HOME/.vimrc_local";
-  if [ ! -f $vimrc_local ]
+  if test ! -f $vimrc_local
   then
     touch $vimrc_local;
     echo "Creating placeholder at ${vimrc_local}"
@@ -81,6 +81,6 @@ main() {
   create_undo_directory
   touch_vimrc_local
   link_files
-} 
+}
 
 main
