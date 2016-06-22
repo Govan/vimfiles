@@ -189,6 +189,10 @@ if executable("ag")
         \ --ignore .hg
         \ --ignore .DS_Store
         \ --ignore "**/*.pyc"
+        \ --ignore "*.beam"
+        \ --ignore "deps/*"
+        \ --ignore "node_modules/*"
+        \ --ignore "_build/*"
         \ -g ""'
   let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
@@ -456,6 +460,13 @@ endfun
 " files. That might bo overkill, but sod it.
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " }}}
+
+
+" Force myself to use the iOS compatible esc{{{
+inoremap <esc> <NOP>
+inoremap ,. <esc>
+" }}}
+
 
 " Load in host-dependant settings
 so ~/.vimrc_local
