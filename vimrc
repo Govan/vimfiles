@@ -464,7 +464,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Force myself to use the iOS compatible esc{{{
 inoremap <esc> <NOP>
-inoremap ,. <esc>
+inoremap jk <esc>
 " }}}
 
 
