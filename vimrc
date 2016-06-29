@@ -257,7 +257,7 @@ nmap <leader>q :b#<bar>bd#<CR>
 " Warn when stepping from current session's undos into those from the previous session
 " Remap the undo key to warn about stepping back into a buffer's pre-history...
 set undofile                " Save undo's after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
+set undodir=$HOME/.vim_local/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 nnoremap <expr> u VerifyUndo()

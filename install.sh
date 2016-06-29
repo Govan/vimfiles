@@ -42,7 +42,7 @@ create_swap_directory() {
 }
 
 create_undo_directory() {
-  mkdir -p "$HOME/.vim/undo"
+  mkdir -p "$HOME/.vim_local/undo"
 }
 
 link_files() {
