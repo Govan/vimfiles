@@ -16,6 +16,9 @@ set noswapfile
 set winheight=11
 
 set timeout ttimeoutlen=1
+
+" stop vim crapping out a netrwhist file, maybe?
+let g:netrw_dirhistmax=0
 " }}}
 
 " Use Pathogen to manage plugins {{{
@@ -392,7 +395,11 @@ nnoremap ; :
 
 " Give myself a HardTime{{{
 " https://github.com/takac/vim-hardtime
-" let g:hardtime_default_on = 1
+let g:hardtime_default_on = 1
+let g:list_of_normal_keys = ["h", "t", "n", "s", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_visual_keys = ["h", "t", "n", "s", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_disabled_keys = []
 " }}}
 
 " Remap the Dvorak RHS home row to behave as directions{{{
