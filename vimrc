@@ -93,9 +93,9 @@ endif
 
 " Enable Mouse Control {{{
 " Enable draggable panels for resizing
-set ttyfast
-set ttymouse=xterm2
-set mouse=a
+" set ttyfast
+" set ttymouse=xterm2
+" set mouse=a
 " }}}
 
 " Disable bell {{{
