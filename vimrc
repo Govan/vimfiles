@@ -117,10 +117,7 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 " }}}
 
 " Turn off the current line highlight {{{
-" it makes syntax enabled file very,
-" very laggy when moving, or at least it does when used in combination with
-" the rest of my setup. Possibly something to do with string highlighting?
-set nocursorline
+set cursorline
 " }}}
 
 " Disable automatic line folding {{{
@@ -236,7 +233,7 @@ vmap gx <Plug>(openbrowser-smart-search)
 "  allow buffer swapping when the current buffer is unsaved
 set hidden
 " swap between active/last-active files without stretching
-map ,, <C-^>
+noremap <leader>, <C-^>
 
 " Move between buffers
 noremap <leader>h :bn<CR>
@@ -390,7 +387,8 @@ imap <C-w> <esc>:w<CR>a
 " http://programming.oreilly.com/2013/10/more-instantly-better-vim.html
 " swap : and ; around to save constant <shifting>
 " actually, don't remap : to ; - it screws with a lot of other people's remaps
-nnoremap ; :
+" 11/07/2016 - turning this off for now so I can use it for inline searching
+" nnoremap ; :
 " }}}
 
 " Give myself a HardTime{{{
@@ -446,6 +444,10 @@ endfunction
 " }}}
 
 " RSpec.vim mappings to send tests to tmux {{{
+" Use https://github.com/jgdavey/tslime.vim/blob/master/plugin/tslime.vim
+" which lets us default to current window
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
  map <Leader>o :w<CR>:call RunLastSpec()<CR>
  map <Leader>a :w<CR>:call RunNearestSpec()<CR>
  map <Leader>A :w<CR>:call RunCurrentSpecFile()<CR>
@@ -470,7 +472,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 
 " Force myself to use the iOS compatible esc{{{
-inoremap <esc> <NOP>
+" inoremap <esc> <NOP>
 inoremap jk <esc>
 " }}}
 
