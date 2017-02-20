@@ -198,14 +198,9 @@ if executable("ag")
 endif
 " }}}
 
-" Solarized colourscheme {{{
+" Molokai colourscheme {{{
 " https://github.com/altercation/vim-colors-solarized
-colorscheme solarized
-set guifont=Monaco:h12
-if has('gui_running')
-  " Do nothing
-endif
-set background=light
+colorscheme molokai
 " }}}
 
 " Airline {{{
@@ -213,7 +208,7 @@ set background=light
 " You'll also want the powerline patched font
 " https://github.com/powerline/fonts/blob/master/Inconsolata/Inconsolata%20for%20Powerline.otf
 "-------------------------------------------------------------------------------------
-let g:airline_theme='solarized'
+let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 " }}}
 
@@ -393,7 +388,7 @@ imap <C-w> <esc>:w<CR>a
 
 " Give myself a HardTime{{{
 " https://github.com/takac/vim-hardtime
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 let g:list_of_normal_keys = ["h", "t", "n", "s", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_visual_keys = ["h", "t", "n", "s", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
